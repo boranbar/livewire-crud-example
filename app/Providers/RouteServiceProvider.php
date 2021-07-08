@@ -48,9 +48,6 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
 
-        Route::bind('user', function ($value, $route) {
-            return $this->getModel(\App\Models\User::class, $value);
-        });
     }
 
     /**
@@ -65,11 +62,4 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
-    private function getModel($model, $routeKey)
-    {
-        $id = \Hashids::connection($model)->decode($routeKey)[0] ?? null;
-        $modelInstance = resolve($model);
-
-        return  $modelInstance->findOrFail($id);
-    }
 }

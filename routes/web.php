@@ -12,5 +12,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('users',\App\Http\Controllers\UserController::class)->only('index','update','destroy','edit');
+Route::get('/',[\App\Http\Controllers\ProductController::class,'index'])->name('homepage');
 

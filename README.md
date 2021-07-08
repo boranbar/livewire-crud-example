@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About This Repo
+
+This is a very basic demo to implement CRUD operations with  Laravel Livewire.
+
 ## How to use
 
 - Clone the repository with git clone
@@ -14,8 +18,9 @@
 - Run composer install
 - Run php artisan key:generate
 - Run php artisan migrate --seed (it has some seeded data for your testing)
-- Run npm install & npm run dev.
-- That's it: launch the url: /users.
+- Run npm install.
+- Run  npm run dev.
+- That's it: launch the main url.
 
 
 ## About Laravel

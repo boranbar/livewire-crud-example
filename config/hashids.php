@@ -36,8 +36,8 @@ return [
     */
 
     'connections' => [
-        \App\Models\User::class => [
-            'salt' => \App\Models\User::class.'d964bdab273ac2fc98e5eb9723251126',
+        'product' => [
+            'salt' => \App\Models\Product::class.'d964bdab273ac2fc98e5eb9723251126',
             'length' => 5,
         ],
     ],
