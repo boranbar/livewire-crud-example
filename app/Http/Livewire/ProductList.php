@@ -44,6 +44,7 @@ class ProductList extends Component
 
     public function edit($productID)
     {
+        $this->resetValidation();
         $this->showModal = true;
         $this->productID = Hashids::connection('product')->decode($productID)[0] ?? null;
         if (is_null($this->productID)) {
@@ -56,6 +57,7 @@ class ProductList extends Component
 
     public function create()
     {
+        $this->resetValidation();
         $this->showModal = true;
         $this->product = null;
         $this->productID = null;
@@ -64,7 +66,14 @@ class ProductList extends Component
     public function save()
     {
         $this->validate();
-
+        /*
+        try {
+            $this->validate();
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $this->emit('validation-errors',['errors' => $e]);
+            $this->validate();
+        }
+        */
         if (!is_null($this->productID)) {
             $this->product->save();
             $this->emit('productUpdated');

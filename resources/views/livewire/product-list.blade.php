@@ -95,6 +95,11 @@
 </div>
 @push('scripts')
     <script>
+        /*
+        Livewire.on('validation-errors', param => {
+            console.log(param);
+        });
+        */
         Livewire.on('productNotFound', function () {
             alertify.error('Product not found!');
         });
